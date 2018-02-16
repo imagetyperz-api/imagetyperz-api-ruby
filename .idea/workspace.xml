@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00ad765e-4470-40f7-a012-735cbfda9cfc" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/imagetyperzapi@imagetyperzapi.coverage" NAME="imagetyperzapi Coverage Results" MODIFIED="1518693254775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="imagetypersapi" />
+    <SUITE FILE_PATH="coverage/imagetypersapi@two_captcha.coverage" NAME="two_captcha Coverage Results" MODIFIED="1496844790705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="imagetypersapi" />
+    <SUITE FILE_PATH="coverage/imagetypersapi@imagetyperzapi.coverage" NAME="imagetyperzapi Coverage Results" MODIFIED="1518693034516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="imagetypersapi" />
+    <SUITE FILE_PATH="coverage/imagetypersapi@example.coverage" NAME="example Coverage Results" MODIFIED="1518692331761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="imagetypersapi" />
+    <SUITE FILE_PATH="coverage/imagetyperzapi@example.coverage" NAME="example Coverage Results" MODIFIED="1518693319169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="imagetypersapi" />
+    <SUITE FILE_PATH="coverage/imagetypersapi@main.coverage" NAME="main Coverage Results" MODIFIED="1502104138959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="imagetypersapi" />
+    <SUITE FILE_PATH="coverage/imagetypersapi@ruby_api.coverage" NAME="ruby_api Coverage Results" MODIFIED="1496844689274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="imagetypersapi" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="example.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="306">
+                <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby Class Template" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>include</find>
+      <find>'access_token_here'</find>
+      <find>'</find>
+      <find>http://captchatypers.com</find>
+      <find>lower</find>
+      <find>include?</find>
+      <find>access_token</find>
+      <find>FALSE</find>
+      <find>base64</find>
+      <find>b64</find>
+      <find>start</find>
+      <find>filename</find>
+      <find>starts</find>
+      <find>```python</find>
+      <find>ita.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;</replace>
+      <replace>``` ruby</replace>
+      <replace>i.</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/two_captcha.rb" />
+        <option value="$PROJECT_DIR$/ruby_api.rb" />
+        <option value="$PROJECT_DIR$/captcha.rb" />
+        <option value="$PROJECT_DIR$/recaptcha.rb" />
+        <option value="$PROJECT_DIR$/image_typers_api.rb" />
+        <option value="$PROJECT_DIR$/main.rb" />
+        <option value="$PROJECT_DIR$/README.txt" />
+        <option value="$PROJECT_DIR$/lib/imagetyperzapi.rb" />
+        <option value="$PROJECT_DIR$/lib/imagetyperzapi.rb" />
+        <option value="$PROJECT_DIR$/example.rb" />
+        <option value="$PROJECT_DIR$/example.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1108" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="imagetyperzapi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imagetyperzapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Ruby.example">
+    <configuration name="example" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="imagetypersapi" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/example.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+    </configuration>
+    <configuration name="imagetyperzapi" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="imagetypersapi" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/lib" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/lib/imagetyperzapi.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+    </configuration>
+    <configuration name="two_captcha" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="imagetypersapi" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/two_captcha.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+    </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Ruby.two_captcha" />
+      <item index="1" class="java.lang.String" itemvalue="Ruby.example" />
+      <item index="2" class="java.lang.String" itemvalue="Ruby.imagetyperzapi" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Ruby.example" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.imagetyperzapi" />
+        <item index="2" class="java.lang.String" itemvalue="Ruby.two_captcha" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.example" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.two_captcha" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00ad765e-4470-40f7-a012-735cbfda9cfc" name="Default" comment="" />
+      <created>1496844546027</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1496844546027</updated>
+      <workItem from="1496844547500" duration="12422000" />
+      <workItem from="1501685968609" duration="91000" />
+      <workItem from="1501686075069" duration="1275000" />
+      <workItem from="1502100758497" duration="3583000" />
+      <workItem from="1502109753044" duration="4000" />
+      <workItem from="1518690755641" duration="2360000" />
+      <workItem from="1518693127480" duration="13000" />
+      <workItem from="1518693210985" duration="1142000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20890000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="-1" width="1922" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328934" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328934" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286004" sideWeight="0.49114582" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="32" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/imagetyperzapi.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#9201#0" expanded="false" />
+            <element signature="e#1106#1554#0" expanded="false" />
+            <element signature="e#1122#1199#0" expanded="false" />
+            <element signature="e#1202#1480#0" expanded="false" />
+            <element signature="e#1263#1347#0" expanded="false" />
+            <element signature="e#1484#1521#0" expanded="false" />
+            <element signature="e#1525#1550#0" expanded="false" />
+            <element signature="e#1574#1796#0" expanded="false" />
+            <element signature="e#1592#1654#0" expanded="false" />
+            <element signature="e#1658#1716#0" expanded="false" />
+            <element signature="e#1719#1752#0" expanded="false" />
+            <element signature="e#1755#1792#0" expanded="false" />
+            <element signature="e#2142#2237#0" expanded="false" />
+            <element signature="e#2266#3096#0" expanded="false" />
+            <element signature="e#2297#2371#0" expanded="false" />
+            <element signature="e#2377#2589#0" expanded="false" />
+            <element signature="e#2290#3068#1" expanded="false" />
+            <element signature="e#2865#3036#0" expanded="false" />
+            <element signature="e#3125#5037#0" expanded="false" />
+            <element signature="e#3217#4271#0" expanded="false" />
+            <element signature="e#3374#3504#0" expanded="false" />
+            <element signature="e#3541#3628#0" expanded="false" />
+            <element signature="e#3772#4208#0" expanded="false" />
+            <element signature="e#3994#4085#0" expanded="false" />
+            <element signature="e#4422#4497#0" expanded="false" />
+            <element signature="e#3183#5031#1" expanded="false" />
+            <element signature="e#4773#4944#0" expanded="false" />
+            <element signature="e#5087#6276#0" expanded="false" />
+            <element signature="e#5151#5257#0" expanded="false" />
+            <element signature="e#5263#5490#0" expanded="false" />
+            <element signature="e#5538#5595#0" expanded="false" />
+            <element signature="e#5979#6150#0" expanded="false" />
+            <element signature="e#6321#7274#0" expanded="false" />
+            <element signature="e#6380#6453#0" expanded="false" />
+            <element signature="e#6459#6690#0" expanded="false" />
+            <element signature="e#6373#7248#1" expanded="false" />
+            <element signature="e#6966#7137#0" expanded="false" />
+            <element signature="e#7322#7625#0" expanded="false" />
+            <element signature="e#7354#7619#2" expanded="false" />
+            <element signature="e#7495#7566#0" expanded="false" />
+            <element signature="e#7649#8529#0" expanded="false" />
+            <element signature="e#7692#7806#0" expanded="false" />
+            <element signature="e#7812#8028#0" expanded="false" />
+            <element signature="e#7685#8501#1" expanded="false" />
+            <element signature="e#8304#8475#0" expanded="false" />
+            <element signature="e#8557#8640#0" expanded="false" />
+            <element signature="e#8602#8634#0" expanded="false" />
+            <element signature="e#8661#8761#0" expanded="false" />
+            <element signature="e#8682#8755#2" expanded="false" />
+            <element signature="e#8780#8884#0" expanded="false" />
+            <element signature="e#8799#8878#2" expanded="false" />
+            <element signature="e#8905#9015#0" expanded="false" />
+            <element signature="e#8926#9009#2" expanded="false" />
+            <element signature="e#9042#9156#0" expanded="false" />
+            <element signature="e#9069#9150#2" expanded="false" />
+            <element signature="e#9170#9197#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1428">
+            <caret line="84" column="44" lean-forward="false" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="4" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/imagetyperzapi.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#9201#0" expanded="false" />
+            <element signature="e#1106#1554#0" expanded="false" />
+            <element signature="e#1122#1199#0" expanded="false" />
+            <element signature="e#1202#1480#0" expanded="false" />
+            <element signature="e#1263#1347#0" expanded="false" />
+            <element signature="e#1484#1521#0" expanded="false" />
+            <element signature="e#1525#1550#0" expanded="false" />
+            <element signature="e#1574#1796#0" expanded="false" />
+            <element signature="e#1592#1654#0" expanded="false" />
+            <element signature="e#1658#1716#0" expanded="false" />
+            <element signature="e#1719#1752#0" expanded="false" />
+            <element signature="e#1755#1792#0" expanded="false" />
+            <element signature="e#2142#2237#0" expanded="false" />
+            <element signature="e#2266#3096#0" expanded="false" />
+            <element signature="e#2297#2371#0" expanded="false" />
+            <element signature="e#2377#2589#0" expanded="false" />
+            <element signature="e#2290#3068#1" expanded="false" />
+            <element signature="e#2865#3036#0" expanded="false" />
+            <element signature="e#3125#5037#0" expanded="false" />
+            <element signature="e#3217#4271#0" expanded="false" />
+            <element signature="e#3374#3504#0" expanded="false" />
+            <element signature="e#3541#3628#0" expanded="false" />
+            <element signature="e#3772#4208#0" expanded="false" />
+            <element signature="e#3994#4085#0" expanded="false" />
+            <element signature="e#4422#4497#0" expanded="false" />
+            <element signature="e#3183#5031#1" expanded="false" />
+            <element signature="e#4773#4944#0" expanded="false" />
+            <element signature="e#5087#6276#0" expanded="false" />
+            <element signature="e#5151#5257#0" expanded="false" />
+            <element signature="e#5263#5490#0" expanded="false" />
+            <element signature="e#5538#5595#0" expanded="false" />
+            <element signature="e#5979#6150#0" expanded="false" />
+            <element signature="e#6321#7274#0" expanded="false" />
+            <element signature="e#6380#6453#0" expanded="false" />
+            <element signature="e#6459#6690#0" expanded="false" />
+            <element signature="e#6373#7248#1" expanded="false" />
+            <element signature="e#6966#7137#0" expanded="false" />
+            <element signature="e#7322#7625#0" expanded="false" />
+            <element signature="e#7354#7619#2" expanded="false" />
+            <element signature="e#7495#7566#0" expanded="false" />
+            <element signature="e#7649#8529#0" expanded="false" />
+            <element signature="e#7692#7806#0" expanded="false" />
+            <element signature="e#7812#8028#0" expanded="false" />
+            <element signature="e#7685#8501#1" expanded="false" />
+            <element signature="e#8304#8475#0" expanded="false" />
+            <element signature="e#8557#8640#0" expanded="false" />
+            <element signature="e#8602#8634#0" expanded="false" />
+            <element signature="e#8661#8761#0" expanded="false" />
+            <element signature="e#8682#8755#2" expanded="false" />
+            <element signature="e#8780#8884#0" expanded="false" />
+            <element signature="e#8799#8878#2" expanded="false" />
+            <element signature="e#8905#9015#0" expanded="false" />
+            <element signature="e#8926#9009#2" expanded="false" />
+            <element signature="e#9042#9156#0" expanded="false" />
+            <element signature="e#9069#9150#2" expanded="false" />
+            <element signature="e#9170#9197#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1428">
+            <caret line="84" column="44" lean-forward="false" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/imagetyperzapi.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#9201#0" expanded="false" />
+            <element signature="e#1106#1554#0" expanded="false" />
+            <element signature="e#1122#1199#0" expanded="false" />
+            <element signature="e#1202#1480#0" expanded="false" />
+            <element signature="e#1263#1347#0" expanded="false" />
+            <element signature="e#1484#1521#0" expanded="false" />
+            <element signature="e#1525#1550#0" expanded="false" />
+            <element signature="e#1574#1796#0" expanded="false" />
+            <element signature="e#1592#1654#0" expanded="false" />
+            <element signature="e#1658#1716#0" expanded="false" />
+            <element signature="e#1719#1752#0" expanded="false" />
+            <element signature="e#1755#1792#0" expanded="false" />
+            <element signature="e#2142#2237#0" expanded="false" />
+            <element signature="e#2266#3096#0" expanded="false" />
+            <element signature="e#2297#2371#0" expanded="false" />
+            <element signature="e#2377#2589#0" expanded="false" />
+            <element signature="e#2290#3068#1" expanded="false" />
+            <element signature="e#2865#3036#0" expanded="false" />
+            <element signature="e#3125#5037#0" expanded="false" />
+            <element signature="e#3217#4271#0" expanded="false" />
+            <element signature="e#3374#3504#0" expanded="false" />
+            <element signature="e#3541#3628#0" expanded="false" />
+            <element signature="e#3772#4208#0" expanded="false" />
+            <element signature="e#3994#4085#0" expanded="false" />
+            <element signature="e#4422#4497#0" expanded="false" />
+            <element signature="e#3183#5031#1" expanded="false" />
+            <element signature="e#4773#4944#0" expanded="false" />
+            <element signature="e#5087#6276#0" expanded="false" />
+            <element signature="e#5151#5257#0" expanded="false" />
+            <element signature="e#5263#5490#0" expanded="false" />
+            <element signature="e#5538#5595#0" expanded="false" />
+            <element signature="e#5979#6150#0" expanded="false" />
+            <element signature="e#6321#7274#0" expanded="false" />
+            <element signature="e#6380#6453#0" expanded="false" />
+            <element signature="e#6459#6690#0" expanded="false" />
+            <element signature="e#6373#7248#1" expanded="false" />
+            <element signature="e#6966#7137#0" expanded="false" />
+            <element signature="e#7322#7625#0" expanded="false" />
+            <element signature="e#7354#7619#2" expanded="false" />
+            <element signature="e#7495#7566#0" expanded="false" />
+            <element signature="e#7649#8529#0" expanded="false" />
+            <element signature="e#7692#7806#0" expanded="false" />
+            <element signature="e#7812#8028#0" expanded="false" />
+            <element signature="e#7685#8501#1" expanded="false" />
+            <element signature="e#8304#8475#0" expanded="false" />
+            <element signature="e#8557#8640#0" expanded="false" />
+            <element signature="e#8602#8634#0" expanded="false" />
+            <element signature="e#8661#8761#0" expanded="false" />
+            <element signature="e#8682#8755#2" expanded="false" />
+            <element signature="e#8780#8884#0" expanded="false" />
+            <element signature="e#8799#8878#2" expanded="false" />
+            <element signature="e#8905#9015#0" expanded="false" />
+            <element signature="e#8926#9009#2" expanded="false" />
+            <element signature="e#9042#9156#0" expanded="false" />
+            <element signature="e#9069#9150#2" expanded="false" />
+            <element signature="e#9170#9197#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/imagetyperzapi.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#9201#0" expanded="false" />
+            <element signature="e#1106#1554#0" expanded="false" />
+            <element signature="e#1122#1199#0" expanded="false" />
+            <element signature="e#1202#1480#0" expanded="false" />
+            <element signature="e#1263#1347#0" expanded="false" />
+            <element signature="e#1484#1521#0" expanded="false" />
+            <element signature="e#1525#1550#0" expanded="false" />
+            <element signature="e#1574#1796#0" expanded="false" />
+            <element signature="e#1592#1654#0" expanded="false" />
+            <element signature="e#1658#1716#0" expanded="false" />
+            <element signature="e#1719#1752#0" expanded="false" />
+            <element signature="e#1755#1792#0" expanded="false" />
+            <element signature="e#2142#2237#0" expanded="false" />
+            <element signature="e#2266#3096#0" expanded="false" />
+            <element signature="e#2297#2371#0" expanded="false" />
+            <element signature="e#2377#2589#0" expanded="false" />
+            <element signature="e#2290#3068#1" expanded="false" />
+            <element signature="e#2865#3036#0" expanded="false" />
+            <element signature="e#3125#5037#0" expanded="false" />
+            <element signature="e#3217#4271#0" expanded="false" />
+            <element signature="e#3374#3504#0" expanded="false" />
+            <element signature="e#3541#3628#0" expanded="false" />
+            <element signature="e#3772#4208#0" expanded="false" />
+            <element signature="e#3994#4085#0" expanded="false" />
+            <element signature="e#4422#4497#0" expanded="false" />
+            <element signature="e#3183#5031#1" expanded="false" />
+            <element signature="e#4773#4944#0" expanded="false" />
+            <element signature="e#5087#6276#0" expanded="false" />
+            <element signature="e#5151#5257#0" expanded="false" />
+            <element signature="e#5263#5490#0" expanded="false" />
+            <element signature="e#5538#5595#0" expanded="false" />
+            <element signature="e#5979#6150#0" expanded="false" />
+            <element signature="e#6321#7274#0" expanded="false" />
+            <element signature="e#6380#6453#0" expanded="false" />
+            <element signature="e#6459#6690#0" expanded="false" />
+            <element signature="e#6373#7248#1" expanded="false" />
+            <element signature="e#6966#7137#0" expanded="false" />
+            <element signature="e#7322#7625#0" expanded="false" />
+            <element signature="e#7354#7619#2" expanded="false" />
+            <element signature="e#7495#7566#0" expanded="false" />
+            <element signature="e#7649#8529#0" expanded="false" />
+            <element signature="e#7692#7806#0" expanded="false" />
+            <element signature="e#7812#8028#0" expanded="false" />
+            <element signature="e#7685#8501#1" expanded="false" />
+            <element signature="e#8304#8475#0" expanded="false" />
+            <element signature="e#8557#8640#0" expanded="false" />
+            <element signature="e#8602#8634#0" expanded="false" />
+            <element signature="e#8661#8761#0" expanded="false" />
+            <element signature="e#8682#8755#2" expanded="false" />
+            <element signature="e#8780#8884#0" expanded="false" />
+            <element signature="e#8799#8878#2" expanded="false" />
+            <element signature="e#8905#9015#0" expanded="false" />
+            <element signature="e#8926#9009#2" expanded="false" />
+            <element signature="e#9042#9156#0" expanded="false" />
+            <element signature="e#9069#9150#2" expanded="false" />
+            <element signature="e#9170#9197#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="43" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/imagetyperzapi.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="60" column="23" lean-forward="false" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+          <folding>
+            <element signature="e#18#9201#0" expanded="false" />
+            <element signature="e#1106#1554#0" expanded="false" />
+            <element signature="e#1122#1199#0" expanded="false" />
+            <element signature="e#1202#1480#0" expanded="false" />
+            <element signature="e#1263#1347#0" expanded="false" />
+            <element signature="e#1484#1521#0" expanded="false" />
+            <element signature="e#1525#1550#0" expanded="false" />
+            <element signature="e#1574#1796#0" expanded="false" />
+            <element signature="e#1592#1654#0" expanded="false" />
+            <element signature="e#1658#1716#0" expanded="false" />
+            <element signature="e#1719#1752#0" expanded="false" />
+            <element signature="e#1755#1792#0" expanded="false" />
+            <element signature="e#2142#2237#0" expanded="false" />
+            <element signature="e#2266#3096#0" expanded="false" />
+            <element signature="e#2297#2371#0" expanded="false" />
+            <element signature="e#2377#2589#0" expanded="false" />
+            <element signature="e#2290#3068#1" expanded="false" />
+            <element signature="e#2865#3036#0" expanded="false" />
+            <element signature="e#3125#5037#0" expanded="false" />
+            <element signature="e#3217#4271#0" expanded="false" />
+            <element signature="e#3374#3504#0" expanded="false" />
+            <element signature="e#3541#3628#0" expanded="false" />
+            <element signature="e#3772#4208#0" expanded="false" />
+            <element signature="e#3994#4085#0" expanded="false" />
+            <element signature="e#4422#4497#0" expanded="false" />
+            <element signature="e#3183#5031#1" expanded="false" />
+            <element signature="e#4773#4944#0" expanded="false" />
+            <element signature="e#5087#6276#0" expanded="false" />
+            <element signature="e#5151#5257#0" expanded="false" />
+            <element signature="e#5263#5490#0" expanded="false" />
+            <element signature="e#5538#5595#0" expanded="false" />
+            <element signature="e#5979#6150#0" expanded="false" />
+            <element signature="e#6321#7274#0" expanded="false" />
+            <element signature="e#6380#6453#0" expanded="false" />
+            <element signature="e#6459#6690#0" expanded="false" />
+            <element signature="e#6373#7248#1" expanded="false" />
+            <element signature="e#6966#7137#0" expanded="false" />
+            <element signature="e#7322#7625#0" expanded="false" />
+            <element signature="e#7354#7619#2" expanded="false" />
+            <element signature="e#7495#7566#0" expanded="false" />
+            <element signature="e#7649#8529#0" expanded="false" />
+            <element signature="e#7692#7806#0" expanded="false" />
+            <element signature="e#7812#8028#0" expanded="false" />
+            <element signature="e#7685#8501#1" expanded="false" />
+            <element signature="e#8304#8475#0" expanded="false" />
+            <element signature="e#8557#8640#0" expanded="false" />
+            <element signature="e#8602#8634#0" expanded="false" />
+            <element signature="e#8661#8761#0" expanded="false" />
+            <element signature="e#8682#8755#2" expanded="false" />
+            <element signature="e#8780#8884#0" expanded="false" />
+            <element signature="e#8799#8878#2" expanded="false" />
+            <element signature="e#8905#9015#0" expanded="false" />
+            <element signature="e#8926#9009#2" expanded="false" />
+            <element signature="e#9042#9156#0" expanded="false" />
+            <element signature="e#9069#9150#2" expanded="false" />
+            <element signature="e#9170#9197#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/f.rb" />
+    <entry file="file://$PROJECT_DIR$/test.rb" />
+    <entry file="file://$PROJECT_DIR$/ruby_api.rb" />
+    <entry file="file://$PROJECT_DIR$/two_captcha.rb" />
+    <entry file="file:///usr/lib/ruby/2.4.0/net/http.rb" />
+    <entry file="file://$PROJECT_DIR$/captcha.rb" />
+    <entry file="file://$PROJECT_DIR$/recaptcha.rb" />
+    <entry file="file://$USER_HOME$/.gem/ruby/2.4.0/gems/ruby-debug-ide-0.6.1.beta4/lib/ruby-debug-ide.rb" />
+    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt" />
+    <entry file="file://$PROJECT_DIR$/lib/imagetyperzapi.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="282" column="33" lean-forward="false" selection-start-line="282" selection-start-column="33" selection-end-line="282" selection-end-column="33" />
+          <folding>
+            <element signature="e#18#9201#0" expanded="false" />
+            <element signature="e#1106#1554#0" expanded="false" />
+            <element signature="e#1122#1199#0" expanded="false" />
+            <element signature="e#1202#1480#0" expanded="false" />
+            <element signature="e#1263#1347#0" expanded="false" />
+            <element signature="e#1484#1521#0" expanded="false" />
+            <element signature="e#1525#1550#0" expanded="false" />
+            <element signature="e#1574#1796#0" expanded="false" />
+            <element signature="e#1592#1654#0" expanded="false" />
+            <element signature="e#1658#1716#0" expanded="false" />
+            <element signature="e#1719#1752#0" expanded="false" />
+            <element signature="e#1755#1792#0" expanded="false" />
+            <element signature="e#2142#2237#0" expanded="false" />
+            <element signature="e#2266#3096#0" expanded="false" />
+            <element signature="e#2297#2371#0" expanded="false" />
+            <element signature="e#2377#2589#0" expanded="false" />
+            <element signature="e#2290#3068#1" expanded="false" />
+            <element signature="e#2865#3036#0" expanded="false" />
+            <element signature="e#3125#5037#0" expanded="false" />
+            <element signature="e#3217#4271#0" expanded="false" />
+            <element signature="e#3374#3504#0" expanded="false" />
+            <element signature="e#3541#3628#0" expanded="false" />
+            <element signature="e#3772#4208#0" expanded="false" />
+            <element signature="e#3994#4085#0" expanded="false" />
+            <element signature="e#4422#4497#0" expanded="false" />
+            <element signature="e#3183#5031#1" expanded="false" />
+            <element signature="e#4773#4944#0" expanded="false" />
+            <element signature="e#5087#6276#0" expanded="false" />
+            <element signature="e#5151#5257#0" expanded="false" />
+            <element signature="e#5263#5490#0" expanded="false" />
+            <element signature="e#5538#5595#0" expanded="false" />
+            <element signature="e#5979#6150#0" expanded="false" />
+            <element signature="e#6321#7274#0" expanded="false" />
+            <element signature="e#6380#6453#0" expanded="false" />
+            <element signature="e#6459#6690#0" expanded="false" />
+            <element signature="e#6373#7248#1" expanded="false" />
+            <element signature="e#6966#7137#0" expanded="false" />
+            <element signature="e#7322#7625#0" expanded="false" />
+            <element signature="e#7354#7619#2" expanded="false" />
+            <element signature="e#7495#7566#0" expanded="false" />
+            <element signature="e#7649#8529#0" expanded="false" />
+            <element signature="e#7692#7806#0" expanded="false" />
+            <element signature="e#7812#8028#0" expanded="false" />
+            <element signature="e#7685#8501#1" expanded="false" />
+            <element signature="e#8304#8475#0" expanded="false" />
+            <element signature="e#8557#8640#0" expanded="false" />
+            <element signature="e#8602#8634#0" expanded="false" />
+            <element signature="e#8661#8761#0" expanded="false" />
+            <element signature="e#8682#8755#2" expanded="false" />
+            <element signature="e#8780#8884#0" expanded="false" />
+            <element signature="e#8799#8878#2" expanded="false" />
+            <element signature="e#8905#9015#0" expanded="false" />
+            <element signature="e#8926#9009#2" expanded="false" />
+            <element signature="e#9042#9156#0" expanded="false" />
+            <element signature="e#9069#9150#2" expanded="false" />
+            <element signature="e#9170#9197#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="306">
+            <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
