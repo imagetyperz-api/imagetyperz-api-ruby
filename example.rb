@@ -41,7 +41,11 @@ def test_api
   #puts ita.recaptcha_response
   #ita.set_recaptcha_proxy"123.45.67.78:8080"
   #ita.set_recaptcha_proxy"123.45.67.78:8080:user:password"		# proxy with auth
-  #print ita.set_captcha_bad"123"    # set captcha bad
+  #print ita.set_captcha_bad"123"            # set captcha bad
+  #print ita.captcha_id                      # get last solved captcha id
+  #print ita.captcha_text                    # get last solved captcha text
+  #print ita.recaptcha_id                    # get last solved recaptcha id
+  #print ita.recaptcha_response              # get last solved recaptcha response
 end
 
 def main
