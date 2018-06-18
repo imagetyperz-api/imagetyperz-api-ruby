@@ -102,6 +102,15 @@ ita.set_recaptcha_proxy("123.45.67.78:8080:user:password")
 ```
 We currently support HTTP proxies.
 
+**Get details of proxy for recaptcha**
+
+In case you submitted the recaptcha with proxy, you can check the status of the proxy, if it was used or not,
+and if not, what the reason was with the following:
+
+``` ruby
+puts ita.was_proxy_used captcha_id        # tells if proxy submitted (if any) was used or not, and if not used, reason
+```
+
 **Set captcha bad**
 
 When a captcha was solved wrong by our workers, you can notify the server with it's ID,

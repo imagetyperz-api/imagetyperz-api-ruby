@@ -1,6 +1,7 @@
 # Imagetypers API
 require 'net/http'
 require 'base64'
+require 'json'
 
 # endpoints
 # -------------------------------------------------------------------------------------------
@@ -12,6 +13,7 @@ RECAPTCHA_SUBMIT_ENDPOINT = '/captchaapi/UploadRecaptchaV1.ashx'
 RECAPTCHA_RETRIEVE_ENDPOINT = '/captchaapi/GetRecaptchaText.ashx'
 BALANCE_ENDPOINT = '/Forms/RequestBalance.ashx'
 BAD_IMAGE_ENDPOINT = '/Forms/SetBadImage.ashx'
+PROXY_CHECK_ENDPOINT = 'http://captchatypers.com/captchaAPI/GetReCaptchaTextJSON.ashx'
 
 CAPTCHA_ENDPOINT_CONTENT_TOKEN = '/Forms/UploadFileAndGetTextNEWToken.ashx'
 CAPTCHA_ENDPOINT_URL_TOKEN = '/Forms/FileUploadAndGetTextCaptchaURLToken.ashx'
@@ -19,6 +21,7 @@ RECAPTCHA_SUBMIT_ENDPOINT_TK = '/captchaapi/UploadRecaptchaToken.ashx'
 RECAPTCHA_RETRIEVE_ENDPOINT_TK = '/captchaapi/GetRecaptchaTextToken.ashx'
 BALANCE_ENDPOINT_TOKEN = '/Forms/RequestBalanceToken.ashx'
 BAD_IMAGE_ENDPOINT_TOKEN = '/Forms/SetBadImageToken.ashx'
+PROXY_CHECK_ENDPOINT_TOKEN = 'http://captchatypers.com/captchaAPI/GetReCaptchaTextTokenJSON.ashx'
 
 # user agent used in requests
 # ---------------------------
@@ -69,7 +72,7 @@ end
 
 # Imagetypers API class
 class ImageTyperzAPI
-  def initialize(access_token, affiliate_id = '0', timeout = 60)
+  def initialize(access_token, affiliate_id = '0', timeout = 60000)
     @_access_token = access_token
     @_affiliateid = affiliate_id.to_s
     @_timeout = timeout.to_i
@@ -305,12 +308,67 @@ class ImageTyperzAPI
 
     # check if error
     if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip()   # get only the
+      response_err = response_text.split('ERROR:')[1].strip   # get only the
       @_error = response_err
       raise @_error
     end
 
     return response_text    # all good, return
+  end
+
+  # Tells if proxy was used, reason why not, etc
+  def was_proxy_used(captcha_id)
+    data = {
+        "action" => "GETTEXT",
+        "captchaid" => captcha_id.to_s,
+    }
+
+    if ! @_username.empty?
+      data["username"] = @_username
+      data["password"] = @_password
+      url = PROXY_CHECK_ENDPOINT
+    else
+      data["token"] = @_access_token
+      url = PROXY_CHECK_ENDPOINT_TOKEN
+    end
+
+    # make request
+    http = Net::HTTP.new(ROOT_DOMAIN, 80)
+    http.read_timeout = @_timeout
+    req = Net::HTTP::Post.new(url, @_headers)
+    res = http.request(req, URI.encode_www_form(data))
+    response_text = res.body    # get response body
+
+    resp_js = JSON.parse(response_text)[0]
+
+    # check if error
+    if resp_js.key? 'Error'
+      @_error = resp_js['Error']
+      raise @_error
+    end
+
+    # check if captcha completed first
+    if resp_js['Result'].strip == ''
+      @error = 'captcha not completed yet'
+      raise @_error
+    end
+
+    # check if client submitted proxy
+    if resp_js['Proxy_client'].strip == ''
+      return 'no, reason: proxy was no sent with recaptcha submission request'
+    end
+
+    # if we have a reason, it was submitted, but error
+    if resp_js['Proxy_reason'].strip != ''
+      return 'no, reason: %s' % resp_js['Proxy_reason']
+    end
+
+    # check if it was used
+    if resp_js['Proxy_client'].split(':').length >= 2 and resp_js['Proxy_client'] == resp_js['Proxy_worker']
+      return 'yes, used proxy: %s' % (resp_js['Proxy_worker'])
+    end
+
+    return 'no, reason: unknown'
   end
 
   # set recaptcha proxy
