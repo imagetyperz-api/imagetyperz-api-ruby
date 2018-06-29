@@ -184,11 +184,13 @@ class ImageTyperzAPI
     end
 
     # split the response_text for | and return
-    return response_text.split('|')[1]
+    response_text.split('|')[1]
   end
 
-  # submit recaptcha to server for completion
-  def submit_recaptcha(page_url, sitekey)
+  # submit recaptcha to server for completion, with dict as param
+  def submit_recaptcha(d)
+    page_url = d['page_url']
+    sitekey = d['sitekey']
     # params
     data = {
         "action" => "UPLOADCAPTCHA",
@@ -205,9 +207,9 @@ class ImageTyperzAPI
       url = RECAPTCHA_SUBMIT_ENDPOINT_TK
     end
 
-    # if proxy was set, add it to request
-    if @_proxy
-      data['proxy'] = @_proxy['proxy']
+    # proxy
+    if d.key? 'proxy'
+      data['proxy'] = d['proxy']
     end
 
     # affiliate id
@@ -215,6 +217,24 @@ class ImageTyperzAPI
       data["affiliateid"] = @_affiliateid.to_s
     end
 
+    # user agent
+    if d.key? 'user_agent'
+      data['useragent'] = d['user_agent']
+    end
+
+    # v3
+    if d.key? 'type'
+     data['recaptchatype'] = d['type']
+    end
+    if d.key? 'v3_action'
+      data['captchaaction'] = d['v3_action']
+    end
+    if d.key? 'v3_min_score'
+      data['score'] = d['v3_min_score']
+    end
+
+
+    puts data
     # make request
     http = Net::HTTP.new(ROOT_DOMAIN, 80)
     http.read_timeout = @_timeout
@@ -230,7 +250,7 @@ class ImageTyperzAPI
     end
 
     @_recaptcha = Recaptcha.new response_text   # init recaptcha obj
-    return @_recaptcha.captcha_id     # return id
+    @_recaptcha.captcha_id     # return id
   end
 
   # retrieve recaptcha response using id
@@ -265,7 +285,7 @@ class ImageTyperzAPI
     end
 
     @_recaptcha.set_response response_text    # set response to recaptcha obj
-    return @_recaptcha.response   # return response
+    @_recaptcha.response   # return response
   end
 
   # tells if recaptcha is still in progress
@@ -369,13 +389,6 @@ class ImageTyperzAPI
     end
 
     return 'no, reason: unknown'
-  end
-
-  # set recaptcha proxy
-  def set_recaptcha_proxy(proxy)
-    @_proxy = {
-        "proxy" => proxy
-    }
   end
 
   # captcha text
