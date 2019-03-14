@@ -4,11 +4,11 @@
 load "lib/imagetyperzapi.rb"
 
 def test_api
-  access_token = "access_token_here"
+  access_token = "your_access_token"
   ita = ImageTyperzAPI.new(access_token)
 
   # legacy way, will get deprecated at some point
-  #ita.set_user_and_password('your_username', 'your_password')
+  # ita.set_user_and_password('your_username', 'your_password')
 
   # check account balance
   # ---------------------------------------------------
@@ -43,6 +43,24 @@ def test_api
   # get the response and print it
   recaptcha_response = ita.retrieve_recaptcha captcha_id    # retrieve response
   puts "Recaptcha response: #{recaptcha_response}"
+
+  # GeeTest captcha
+  # ---------------
+  # geetest_params = {}
+  # geetest_params["domain"] = "domain_here"
+  # geetest_params["challenge"] = "challenge_here"
+  # geetest_params["gt"] = "gt_here"
+  # # optional params
+  # #geetest_params["proxy"] = "126.45.34.53:345"    # or 126.45.34.53:123:joe:password
+  # #geetest_params["user_agent"] = "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"    # optional
+  # captcha_id = ita.submit_geetest geetest_params
+  # puts "Geetest captcha ID: #{captcha_id}"
+  # puts "Waiting for geetest to be solved..."
+  # while ita.in_progress captcha_id
+  #   sleep 1
+  # end
+  # geetest_response = ita.retrieve_geetest(captcha_id)
+  # puts geetest_response
 
   # Other examples
   # ---------------------------------------------------

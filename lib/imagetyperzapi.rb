@@ -14,6 +14,8 @@ RECAPTCHA_RETRIEVE_ENDPOINT = '/captchaapi/GetRecaptchaText.ashx'
 BALANCE_ENDPOINT = '/Forms/RequestBalance.ashx'
 BAD_IMAGE_ENDPOINT = '/Forms/SetBadImage.ashx'
 PROXY_CHECK_ENDPOINT = 'http://captchatypers.com/captchaAPI/GetReCaptchaTextJSON.ashx'
+GEETEST_SUBMIT_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadGeeTest.ashx'
+GEETEST_RETRIEVE_ENDPOINT = 'http://captchatypers.com/captchaapi/getrecaptchatext.ashx'
 
 CAPTCHA_ENDPOINT_CONTENT_TOKEN = '/Forms/UploadFileAndGetTextNEWToken.ashx'
 CAPTCHA_ENDPOINT_URL_TOKEN = '/Forms/FileUploadAndGetTextCaptchaURLToken.ashx'
@@ -22,6 +24,7 @@ RECAPTCHA_RETRIEVE_ENDPOINT_TK = '/captchaapi/GetRecaptchaTextToken.ashx'
 BALANCE_ENDPOINT_TOKEN = '/Forms/RequestBalanceToken.ashx'
 BAD_IMAGE_ENDPOINT_TOKEN = '/Forms/SetBadImageToken.ashx'
 PROXY_CHECK_ENDPOINT_TOKEN = 'http://captchatypers.com/captchaAPI/GetReCaptchaTextTokenJSON.ashx'
+GEETEST_SUBMIT_ENDPOINT_TK = 'http://captchatypers.com/captchaapi/UploadGeeTestToken.ashx'
 
 # user agent used in requests
 # ---------------------------
@@ -30,8 +33,9 @@ USER_AGENT = 'rubyAPI1.0'
 # captcha class
 class Captcha
   def initialize(response)
-    parse_response response   # parse response
+    parse_response response # parse response
   end
+
   def parse_response(response)
     s = response.split('|')
     if s.length < 2
@@ -62,9 +66,39 @@ class Recaptcha
   def set_response(response)
     @_response = response
   end
+
   def response
     @_response
   end
+
+  def captcha_id
+    @_captcha_id
+  end
+end
+
+# geetest class
+class Geetest
+  def initialize(captcha_id)
+    @_captcha_id = captcha_id
+  end
+
+  def set_response(response)
+    @_response = response
+  end
+
+  def response
+    s = @_response.split(';;;')
+    if s.length == 3
+      h = {}
+      h['challenge'] = s[0]
+      h['validate'] = s[1]
+      h['seccode'] = s[2]
+      h   # return dict
+    else
+      @_response
+    end
+  end
+
   def captcha_id
     @_captcha_id
   end
@@ -94,7 +128,7 @@ class ImageTyperzAPI
         "submit" => "Submit"
     }
 
-    if ! @_username.empty?
+    if !@_username.empty?
       data["username"] = @_username
       data["password"] = @_password
       url = BALANCE_ENDPOINT
@@ -108,23 +142,23 @@ class ImageTyperzAPI
     http.read_timeout = @_timeout
     req = Net::HTTP::Post.new(url, @_headers)
     res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body    # get response body
+    response_text = res.body # get response body
 
     # check if error
     if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip()   # get only the
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
       @_error = response_err
       raise @_error
     end
 
-    return "$#{response_text}"    # all good, return
+    return "$#{response_text}" # all good, return
   end
 
   # solve normal captcha
   def solve_captcha(image_path, case_sensitive = false)
     data = {}
     image_data = ''
-    if ! @_username.empty?
+    if !@_username.empty?
       data["username"] = @_username
       data["password"] = @_password
       url = CAPTCHA_ENDPOINT
@@ -135,7 +169,7 @@ class ImageTyperzAPI
       end
 
       # check if file exists
-      if ! File.file?(image_path)
+      if !File.file?(image_path)
         raise 'given captcha file does not exist'
       end
       # get it as b64
@@ -150,7 +184,7 @@ class ImageTyperzAPI
         # it's image
         url = CAPTCHA_ENDPOINT_CONTENT_TOKEN
         # check if file exists
-        if ! File.file?(image_path)
+        if !File.file?(image_path)
           raise 'given captcha file does not exist'
         end
         # get it as b64
@@ -165,7 +199,7 @@ class ImageTyperzAPI
     data['chkCase'] = case_sensitive ? '1' : '0'
     data['file'] = image_data
     # check for affiliate id
-    if ! @_affiliateid.empty?
+    if !@_affiliateid.empty?
       data['affiliateid'] = @_affiliateid
     end
 
@@ -174,11 +208,11 @@ class ImageTyperzAPI
     http.read_timeout = @_timeout
     req = Net::HTTP::Post.new(url, @_headers)
     res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body    # get response body
+    response_text = res.body # get response body
 
     # check if error
     if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip()   # get only the
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
       @_error = response_err
       raise @_error
     end
@@ -198,7 +232,7 @@ class ImageTyperzAPI
         "googlekey" => sitekey
     }
 
-    if ! @_username.empty?
+    if !@_username.empty?
       data["username"] = @_username
       data["password"] = @_password
       url = RECAPTCHA_SUBMIT_ENDPOINT
@@ -224,7 +258,7 @@ class ImageTyperzAPI
 
     # v3
     if d.key? 'type'
-     data['recaptchatype'] = d['type']
+      data['recaptchatype'] = d['type']
     end
     if d.key? 'v3_action'
       data['captchaaction'] = d['v3_action']
@@ -240,17 +274,17 @@ class ImageTyperzAPI
     http.read_timeout = @_timeout
     req = Net::HTTP::Post.new(url, @_headers)
     res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body    # get response body
+    response_text = res.body # get response body
 
     # check if error
     if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip()   # get only the
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
       @_error = response_err
       raise @_error
     end
 
-    @_recaptcha = Recaptcha.new response_text   # init recaptcha obj
-    @_recaptcha.captcha_id     # return id
+    @_recaptcha = Recaptcha.new response_text # init recaptcha obj
+    @_recaptcha.captcha_id # return id
   end
 
   # retrieve recaptcha response using id
@@ -261,7 +295,7 @@ class ImageTyperzAPI
         "captchaid" => captcha_id,
     }
 
-    if ! @_username.empty?
+    if !@_username.empty?
       data["username"] = @_username
       data["password"] = @_password
       url = RECAPTCHA_RETRIEVE_ENDPOINT
@@ -275,30 +309,114 @@ class ImageTyperzAPI
     http.read_timeout = @_timeout
     req = Net::HTTP::Post.new(url, @_headers)
     res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body    # get response body
+    response_text = res.body # get response body
 
     # check if error
     if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip()   # get only the
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
       @_error = response_err
       raise @_error
     end
 
-    @_recaptcha.set_response response_text    # set response to recaptcha obj
-    @_recaptcha.response   # return response
+    @_recaptcha.set_response response_text # set response to recaptcha obj
+    @_recaptcha.response # return response
+  end
+
+  # submit geetest captcha for completion
+  def submit_geetest(d)
+    d['action'] = 'UPLOADCAPTCHA'
+    # user or token ?
+    if !@_username.empty?
+      d["username"] = @_username
+      d["password"] = @_password
+      url = GEETEST_SUBMIT_ENDPOINT
+    else
+      d["token"] = @_access_token
+      url = GEETEST_SUBMIT_ENDPOINT_TK
+    end
+
+    # affiliate id
+    if @_affiliateid.to_s != '0'
+      d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    # create url
+    params = URI.encode_www_form(d)
+    url = '%s?%s' % [url, params]
+
+    # make request
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    data = http.get(uri.request_uri)
+    response_text = data.body
+
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+
+    @_geetest = Geetest.new response_text # init recaptcha obj
+    @_geetest.captcha_id # return id
+  end
+
+  # retrieve geetest response
+  def retrieve_geetest(captcha_id)
+    d = {}
+    d['action'] = 'GETTEXT'
+    d['captchaid'] = captcha_id
+    # user or token ?
+    if !@_username.empty?
+      d["username"] = @_username
+      d["password"] = @_password
+      url = GEETEST_RETRIEVE_ENDPOINT
+    else
+      d["token"] = @_access_token
+      url = GEETEST_RETRIEVE_ENDPOINT
+    end
+
+    # affiliate id
+    if @_affiliateid.to_s != '0'
+      d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    # create url
+    params = URI.encode_www_form(d)
+    url = '%s?%s' % [url, params]
+
+    # make request
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    data = http.get(uri.request_uri)
+    response_text = data.body
+
+    # check for error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+
+    @_geetest.set_response response_text # set response to recaptcha obj
+    @_geetest.response # return response
   end
 
   # tells if recaptcha is still in progress
   def in_progress(captcha_id)
     begin
-      retrieve_recaptcha captcha_id     # try to retrieve it
-      return false      # no error, it's done
+      if @_geetest
+        retrieve_geetest captcha_id
+      else
+        retrieve_recaptcha captcha_id # try to retrieve it
+      end
+      return false
     rescue => details
       if details.message.include? 'NOT_DECODED'
         return true
       end
 
-      raise   # re-raise if different error
+      raise # re-raise if different error
     end
   end
 
@@ -310,7 +428,7 @@ class ImageTyperzAPI
         "submit" => "Submissssst"
     }
 
-    if ! @_username.empty?
+    if !@_username.empty?
       data["username"] = @_username
       data["password"] = @_password
       url = BAD_IMAGE_ENDPOINT
@@ -324,16 +442,16 @@ class ImageTyperzAPI
     http.read_timeout = @_timeout
     req = Net::HTTP::Post.new(url, @_headers)
     res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body    # get response body
+    response_text = res.body # get response body
 
     # check if error
     if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip   # get only the
+      response_err = response_text.split('ERROR:')[1].strip # get only the
       @_error = response_err
       raise @_error
     end
 
-    return response_text    # all good, return
+    return response_text # all good, return
   end
 
   # Tells if proxy was used, reason why not, etc
@@ -343,7 +461,7 @@ class ImageTyperzAPI
         "captchaid" => captcha_id.to_s,
     }
 
-    if ! @_username.empty?
+    if !@_username.empty?
       data["username"] = @_username
       data["password"] = @_password
       url = PROXY_CHECK_ENDPOINT
@@ -357,7 +475,7 @@ class ImageTyperzAPI
     http.read_timeout = @_timeout
     req = Net::HTTP::Post.new(url, @_headers)
     res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body    # get response body
+    response_text = res.body # get response body
 
     resp_js = JSON.parse(response_text)[0]
 
