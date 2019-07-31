@@ -155,7 +155,7 @@ class ImageTyperzAPI
   end
 
   # solve normal captcha
-  def solve_captcha(image_path, case_sensitive = false)
+  def solve_captcha(image_path, is_case_sensitive = false, is_math = false, is_phrase = false, digits_only = false, letters_only = false, min_length = 0, max_length = 0)
     data = {}
     image_data = ''
     if !@_username.empty?
@@ -196,7 +196,33 @@ class ImageTyperzAPI
     end
 
     data['action'] = 'UPLOADCAPTCHA'
-    data['chkCase'] = case_sensitive ? '1' : '0'
+
+    # optional parameters
+    if is_case_sensitive
+      data['iscase'] = 'true'
+    end
+    if is_phrase
+      data['isphrase'] = 'true'
+    end
+    if is_math
+      data['ismath'] = 'true'
+    end
+
+    # digits, letters, or both
+    if digits_only
+      data['alphanumeric'] = '1'
+    elsif letters_only
+      data['alphanumeric'] = '2'
+    end
+
+    # min, max length
+    if min_length != 0
+      data['minlength'] = min_length
+    end
+    if max_length != 0
+      data['maxlength'] = max_length
+    end
+
     data['file'] = image_data
     # check for affiliate id
     if !@_affiliateid.empty?
@@ -267,8 +293,6 @@ class ImageTyperzAPI
       data['score'] = d['v3_min_score']
     end
 
-
-    puts data
     # make request
     http = Net::HTTP.new(ROOT_DOMAIN, 80)
     http.read_timeout = @_timeout

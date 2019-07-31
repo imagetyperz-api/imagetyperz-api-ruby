@@ -43,8 +43,13 @@ puts "Account balance: #{balance}"
 **Submit image captcha**
 
 ``` ruby
-captcha_text = ita.solve_captcha('captcha.jpg')
+captcha_text = ita.solve_captcha(image_path = 'captcha.jpg')
 ```
+(with optional parameters)
+```ruby
+captcha_text = ita.solve_captcha(image_path = 'captcha.jpg', is_case_sensitive = true, is_math = true, is_phrase = true, digits_only = false, letters_only = true, min_length = 2, max_length = 5)
+```
+
 **Works with URL instead of captcha image in case of access key authentication**
 ``` ruby
 ita.solve_captcha('http://abc.com/your_captcha.jpg')   
@@ -133,7 +138,13 @@ puts geetest_response
 
 Response will look like this: `{'challenge': '...', 'validate': '...', 'seccode': '...'}`
 
+## Capy
 
+This captcha requires a `page_url` and `sitekey` in order to be solved by our system.
+Currently, in order to solve a capy captcha, you'll have to use the reCAPTCHA methods and only add `--capy` at the end of the `page_url`.
+Having that up, our system will pick it up as capy. Once workers have solved it, you'll have to use the reCAPTCHA retrieve endpoint, to get the response.
+
+**E.g** Original page url - `https://mysite.com`, capy page url `https://mysite.com--capy`
 
 ## Other methods/variables
 
