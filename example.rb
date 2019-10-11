@@ -28,7 +28,7 @@ def test_api
   # submit to server and get the id
 
   d = {}
-  d['page_url'] = 'page_url_here'    # adding --capy to the end of this, will make captcha be a capy captcha instead of reCAPTCHA
+  d['page_url'] = 'page_url_here'    # add --capy or --hcaptcha at the end, to submit capy or hCaptcha
   d['sitekey'] = 'sitekey_here'
   # d['type'] = 3    # optional, defaults to 1
   # d['v3_min_score'] = 0.3          # min score to target when solving v3 - optional
