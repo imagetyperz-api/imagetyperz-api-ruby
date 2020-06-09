@@ -35,6 +35,7 @@ def test_api
   # d['v3_action'] = 'homepage'      # action to use when solving v3 - optional
   # d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
   # d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
+  # d['data-s'] = 'recaptcha data-s value' # optional
   captcha_id = ita.submit_recaptcha d
 
   puts "Waiting for recaptcha to be solved ..."

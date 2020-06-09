@@ -292,6 +292,10 @@ class ImageTyperzAPI
     if d.key? 'v3_min_score'
       data['score'] = d['v3_min_score']
     end
+    if d.key? 'data-s'
+      data['data-s'] = d['data-s']
+    end
+
 
     # make request
     http = Net::HTTP.new(ROOT_DOMAIN, 80)
