@@ -16,6 +16,10 @@ BAD_IMAGE_ENDPOINT = '/Forms/SetBadImage.ashx'
 PROXY_CHECK_ENDPOINT = 'http://captchatypers.com/captchaAPI/GetReCaptchaTextJSON.ashx'
 GEETEST_SUBMIT_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadGeeTest.ashx'
 GEETEST_RETRIEVE_ENDPOINT = 'http://captchatypers.com/captchaapi/getrecaptchatext.ashx'
+RETRIEVE_JSON_ENDPOINT = 'http://captchatypers.com/captchaapi/GetCaptchaResponseJson.ashx'
+CAPY_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadCapyCaptchaUser.ashx'
+HCAPTCHA_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadHCaptchaUser.ashx'
+TIKTOK_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadTikTokCaptchaUser.ashx'
 
 CAPTCHA_ENDPOINT_CONTENT_TOKEN = '/Forms/UploadFileAndGetTextNEWToken.ashx'
 CAPTCHA_ENDPOINT_URL_TOKEN = '/Forms/FileUploadAndGetTextCaptchaURLToken.ashx'
@@ -29,80 +33,6 @@ GEETEST_SUBMIT_ENDPOINT_TK = 'http://captchatypers.com/captchaapi/UploadGeeTestT
 # user agent used in requests
 # ---------------------------
 USER_AGENT = 'rubyAPI1.0'
-
-# captcha class
-class Captcha
-  def initialize(response)
-    parse_response response # parse response
-  end
-
-  def parse_response(response)
-    s = response.split('|')
-    if s.length < 2
-      raise "cannot parse response from server: #{response}"
-    end
-    # at this point, we have the right length, save it to obj
-
-    @_captcha_id = s[0]
-    s.shift(1)
-    @_text = s.join('|')
-  end
-
-  def captcha_id
-    @_captcha_id
-  end
-
-  def text
-    @_text
-  end
-end
-
-# recaptcha class
-class Recaptcha
-  def initialize(captcha_id)
-    @_captcha_id = captcha_id
-  end
-
-  def set_response(response)
-    @_response = response
-  end
-
-  def response
-    @_response
-  end
-
-  def captcha_id
-    @_captcha_id
-  end
-end
-
-# geetest class
-class Geetest
-  def initialize(captcha_id)
-    @_captcha_id = captcha_id
-  end
-
-  def set_response(response)
-    @_response = response
-  end
-
-  def response
-    s = @_response.split(';;;')
-    if s.length == 3
-      h = {}
-      h['challenge'] = s[0]
-      h['validate'] = s[1]
-      h['seccode'] = s[2]
-      h   # return dict
-    else
-      @_response
-    end
-  end
-
-  def captcha_id
-    @_captcha_id
-  end
-end
 
 # Imagetypers API class
 class ImageTyperzAPI
@@ -121,41 +51,7 @@ class ImageTyperzAPI
     @_password = password
   end
 
-  # get accounts balance
-  def account_balance
-    data = {
-        "action" => "REQUESTBALANCE",
-        "submit" => "Submit"
-    }
-
-    if !@_username.empty?
-      data["username"] = @_username
-      data["password"] = @_password
-      url = BALANCE_ENDPOINT
-    else
-      data["token"] = @_access_token
-      url = BALANCE_ENDPOINT_TOKEN
-    end
-
-    # make request
-    http = Net::HTTP.new(ROOT_DOMAIN, 80)
-    http.read_timeout = @_timeout
-    req = Net::HTTP::Post.new(url, @_headers)
-    res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body # get response body
-
-    # check if error
-    if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip() # get only the
-      @_error = response_err
-      raise @_error
-    end
-
-    return "$#{response_text}" # all good, return
-  end
-
-  # solve normal captcha
-  def solve_captcha(image_path, is_case_sensitive = false, is_math = false, is_phrase = false, digits_only = false, letters_only = false, min_length = 0, max_length = 0)
+  def submit_image(image_path, is_case_sensitive = false, is_math = false, is_phrase = false, digits_only = false, letters_only = false, min_length = 0, max_length = 0)
     data = {}
     image_data = ''
     if !@_username.empty?
@@ -244,10 +140,9 @@ class ImageTyperzAPI
     end
 
     # split the response_text for | and return
-    response_text.split('|')[1]
+    response_text.split('|')[0]
   end
 
-  # submit recaptcha to server for completion, with dict as param
   def submit_recaptcha(d)
     page_url = d['page_url']
     sitekey = d['sitekey']
@@ -310,47 +205,9 @@ class ImageTyperzAPI
       @_error = response_err
       raise @_error
     end
-
-    @_recaptcha = Recaptcha.new response_text # init recaptcha obj
-    @_recaptcha.captcha_id # return id
+    response_text
   end
 
-  # retrieve recaptcha response using id
-  def retrieve_recaptcha(captcha_id)
-    # params
-    data = {
-        "action" => "GETTEXT",
-        "captchaid" => captcha_id,
-    }
-
-    if !@_username.empty?
-      data["username"] = @_username
-      data["password"] = @_password
-      url = RECAPTCHA_RETRIEVE_ENDPOINT
-    else
-      data["token"] = @_access_token
-      url = RECAPTCHA_RETRIEVE_ENDPOINT_TK
-    end
-
-    # make request
-    http = Net::HTTP.new(ROOT_DOMAIN, 80)
-    http.read_timeout = @_timeout
-    req = Net::HTTP::Post.new(url, @_headers)
-    res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body # get response body
-
-    # check if error
-    if response_text.include?("ERROR:")
-      response_err = response_text.split('ERROR:')[1].strip() # get only the
-      @_error = response_err
-      raise @_error
-    end
-
-    @_recaptcha.set_response response_text # set response to recaptcha obj
-    @_recaptcha.response # return response
-  end
-
-  # submit geetest captcha for completion
   def submit_geetest(d)
     d['action'] = 'UPLOADCAPTCHA'
     # user or token ?
@@ -384,25 +241,21 @@ class ImageTyperzAPI
       @_error = response_err
       raise @_error
     end
-
-    @_geetest = Geetest.new response_text # init recaptcha obj
-    @_geetest.captcha_id # return id
+    response_text
   end
 
-  # retrieve geetest response
-  def retrieve_geetest(captcha_id)
-    d = {}
-    d['action'] = 'GETTEXT'
-    d['captchaid'] = captcha_id
+  def submit_capy(d)
+    d['action'] = 'UPLOADCAPTCHA'
+    d['captchatype'] = '12'
     # user or token ?
     if !@_username.empty?
       d["username"] = @_username
       d["password"] = @_password
-      url = GEETEST_RETRIEVE_ENDPOINT
     else
       d["token"] = @_access_token
-      url = GEETEST_RETRIEVE_ENDPOINT
     end
+
+    url = CAPY_ENDPOINT
 
     # affiliate id
     if @_affiliateid.to_s != '0'
@@ -419,33 +272,159 @@ class ImageTyperzAPI
     data = http.get(uri.request_uri)
     response_text = data.body
 
-    # check for error
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+    (JSON.parse response_text)[0]['CaptchaId']
+  end
+
+  def submit_tiktok(d)
+    d['action'] = 'UPLOADCAPTCHA'
+    d['captchatype'] = '10'
+    # user or token ?
+    if !@_username.empty?
+      d["username"] = @_username
+      d["password"] = @_password
+    else
+      d["token"] = @_access_token
+    end
+
+    url = TIKTOK_ENDPOINT
+
+    # affiliate id
+    if @_affiliateid.to_s != '0'
+      d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    # create url
+    params = URI.encode_www_form(d)
+    url = '%s?%s' % [url, params]
+
+    # make request
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    data = http.get(uri.request_uri)
+    response_text = data.body
+
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+    (JSON.parse response_text)[0]['CaptchaId']
+  end
+
+  def submit_hcaptcha(d)
+    d['action'] = 'UPLOADCAPTCHA'
+    d['captchatype'] = '11'
+    # user or token ?
+    if !@_username.empty?
+      d["username"] = @_username
+      d["password"] = @_password
+    else
+      d["token"] = @_access_token
+    end
+
+    url = HCAPTCHA_ENDPOINT
+
+    # affiliate id
+    if @_affiliateid.to_s != '0'
+      d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    # create url
+    params = URI.encode_www_form(d)
+    url = '%s?%s' % [url, params]
+
+    # make request
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    data = http.get(uri.request_uri)
+    response_text = data.body
+
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+    (JSON.parse response_text)[0]['CaptchaId']
+  end
+
+  def retrieve_response(captcha_id)
+    # params
+    data = {
+        "action" => "GETTEXT",
+        "captchaid" => captcha_id,
+    }
+
+    if !@_username.empty?
+      data["username"] = @_username
+      data["password"] = @_password
+    else
+      data["token"] = @_access_token
+    end
+
+    # make request
+    http = Net::HTTP.new(ROOT_DOMAIN, 80)
+    http.read_timeout = @_timeout
+    req = Net::HTTP::Post.new(RETRIEVE_JSON_ENDPOINT, @_headers)
+    res = http.request(req, URI.encode_www_form(data))
+    response_text = res.body # get response body
+
+    # check if error
+    if response_text.include?("ERROR:") and response_text.split('|').length != 2
+      response_err = response_text.split('ERROR:')[1].strip().split('"')[0] # get only the
+      @_error = response_err
+      raise @_error
+    end
+    begin
+      js = (JSON.parse response_text)[0]
+      status = js['Status']
+      if status  == 'Pending'
+        return nil
+      end
+      return js
+    rescue
+      raise 'invalid JSON response from server: ' + response_text + ', check your input'
+    end
+  end
+
+  # get accounts balance
+  def account_balance
+    data = {
+        "action" => "REQUESTBALANCE",
+        "submit" => "Submit"
+    }
+
+    if !@_username.empty?
+      data["username"] = @_username
+      data["password"] = @_password
+      url = BALANCE_ENDPOINT
+    else
+      data["token"] = @_access_token
+      url = BALANCE_ENDPOINT_TOKEN
+    end
+
+    # make request
+    http = Net::HTTP.new(ROOT_DOMAIN, 80)
+    http.read_timeout = @_timeout
+    req = Net::HTTP::Post.new(url, @_headers)
+    res = http.request(req, URI.encode_www_form(data))
+    response_text = res.body # get response body
+
+    # check if error
     if response_text.include?("ERROR:")
       response_err = response_text.split('ERROR:')[1].strip() # get only the
       @_error = response_err
       raise @_error
     end
 
-    @_geetest.set_response response_text # set response to recaptcha obj
-    @_geetest.response # return response
-  end
-
-  # tells if recaptcha is still in progress
-  def in_progress(captcha_id)
-    begin
-      if @_geetest
-        retrieve_geetest captcha_id
-      else
-        retrieve_recaptcha captcha_id # try to retrieve it
-      end
-      return false
-    rescue => details
-      if details.message.include? 'NOT_DECODED'
-        return true
-      end
-
-      raise # re-raise if different error
-    end
+    return "$#{response_text}" # all good, return
   end
 
   # set captcha bad
@@ -478,104 +457,7 @@ class ImageTyperzAPI
       @_error = response_err
       raise @_error
     end
-
-    return response_text # all good, return
-  end
-
-  # Tells if proxy was used, reason why not, etc
-  def was_proxy_used(captcha_id)
-    data = {
-        "action" => "GETTEXT",
-        "captchaid" => captcha_id.to_s,
-    }
-
-    if !@_username.empty?
-      data["username"] = @_username
-      data["password"] = @_password
-      url = PROXY_CHECK_ENDPOINT
-    else
-      data["token"] = @_access_token
-      url = PROXY_CHECK_ENDPOINT_TOKEN
-    end
-
-    # make request
-    http = Net::HTTP.new(ROOT_DOMAIN, 80)
-    http.read_timeout = @_timeout
-    req = Net::HTTP::Post.new(url, @_headers)
-    res = http.request(req, URI.encode_www_form(data))
-    response_text = res.body # get response body
-
-    resp_js = JSON.parse(response_text)[0]
-
-    # check if error
-    if resp_js.key? 'Error'
-      @_error = resp_js['Error']
-      raise @_error
-    end
-
-    # check if captcha completed first
-    if resp_js['Result'].strip == ''
-      @error = 'captcha not completed yet'
-      raise @_error
-    end
-
-    # check if client submitted proxy
-    if resp_js['Proxy_client'].strip == ''
-      return 'no, reason: proxy was no sent with recaptcha submission request'
-    end
-
-    # if we have a reason, it was submitted, but error
-    if resp_js['Proxy_reason'].strip != ''
-      return 'no, reason: %s' % resp_js['Proxy_reason']
-    end
-
-    # check if it was used
-    if resp_js['Proxy_client'].split(':').length >= 2 and resp_js['Proxy_client'] == resp_js['Proxy_worker']
-      return 'yes, used proxy: %s' % (resp_js['Proxy_worker'])
-    end
-
-    return 'no, reason: unknown'
-  end
-
-  # captcha text
-  def captcha_text
-    if @_captcha
-      return @_captcha.text
-    else
-      return ''
-    end
-  end
-
-  # captcha id
-  def captcha_id
-    if @_captcha
-      return @_captcha.captcha_id
-    else
-      return ''
-    end
-  end
-
-  # recaptcha id
-  def recaptcha_id
-    if @_recaptcha
-      return @_recaptcha.captcha_id
-    else
-      return ''
-    end
-  end
-
-  # recaptcha response
-  def recaptcha_response
-    if @_recaptcha
-      return @_recaptcha.response
-    else
-      return ''
-    end
-  end
-
-  # error
-  def error
-    @_error
+    response_text # all good, return
   end
 end
 
