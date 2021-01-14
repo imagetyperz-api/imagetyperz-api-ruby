@@ -10,6 +10,7 @@ ROOT_DOMAIN = 'captchatypers.com'
 # -------------------------------------------------------------------------------------------
 CAPTCHA_ENDPOINT = '/Forms/UploadFileAndGetTextNEW.ashx'
 RECAPTCHA_SUBMIT_ENDPOINT = '/captchaapi/UploadRecaptchaV1.ashx'
+RECAPTCHA_ENT_SUBMIT_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadRecaptchaEnt.ashx'
 RECAPTCHA_RETRIEVE_ENDPOINT = '/captchaapi/GetRecaptchaText.ashx'
 BALANCE_ENDPOINT = '/Forms/RequestBalance.ashx'
 BAD_IMAGE_ENDPOINT = '/Forms/SetBadImage.ashx'
@@ -177,9 +178,15 @@ class ImageTyperzAPI
       data['useragent'] = d['user_agent']
     end
 
-    # v3
+    # type / enterprise
     if d.key? 'type'
       data['recaptchatype'] = d['type']
+      if d['type'].to_s == '4' || d['type'].to_s == '5'
+        url = RECAPTCHA_ENT_SUBMIT_ENDPOINT
+      end
+      if d['type'].to_s == '5'
+        data['enterprise_type'] = 'v3'
+      end
     end
     if d.key? 'v3_action'
       data['captchaaction'] = d['v3_action']
@@ -190,7 +197,9 @@ class ImageTyperzAPI
     if d.key? 'data-s'
       data['data-s'] = d['data-s']
     end
-
+    if d.key? 'cookie_input'
+      data['cookie_input'] = d['cookie_input']
+    end
 
     # make request
     http = Net::HTTP.new(ROOT_DOMAIN, 80)
