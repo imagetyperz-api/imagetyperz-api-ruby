@@ -122,7 +122,7 @@ Optionally, you can send proxy and user_agent along.
 
 ### hCaptcha
 
-Requires page_url and sitekey
+Requires pageurl and sitekey
 
 ```ruby
 d = {}
@@ -135,7 +135,7 @@ captcha_id = ita.submit_hcaptcha d
 
 ### Capy
 
-Requires page_url and sitekey
+Requires pageurl and sitekey
 
 ```ruby
 d = {}
@@ -148,7 +148,7 @@ captcha_id = ita.submit_capy d
 
 ### Tiktok
 
-Requires page_url cookie_input
+Requires pageurl and cookie_input
 
 ```ruby
 d = {}
@@ -158,6 +158,21 @@ d['cookie_input'] = 's_v_web_id:verify_kd6243o_fd449FX_FDGG_1x8E_8NiQ_fgrg9FEIJ3
 # d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
 # d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
 captcha_id = ita.submit_tiktok d
+```
+
+### FunCaptcha
+
+Requires pageurl, sitekey and surl (source URL)
+
+```ruby
+d = {}
+d['pageurl'] = 'https://your-site.com'
+d['sitekey'] = '11111111-1111-1111-1111-111111111111'
+d['surl'] = 'https://api.arkoselabs.com'
+# d['data'] = '{"a":"b"}'   # optional, extra funcaptcha data in JSON format
+# d['proxy'] = '126.45.34.53:123'  # optional - HTTP proxy - optional
+# d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
+captcha_id = ita.submit_funcaptcha d
 ```
 
 ## Retrieve response
