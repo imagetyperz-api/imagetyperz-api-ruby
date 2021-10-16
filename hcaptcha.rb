@@ -17,6 +17,7 @@ def test_api
   d = {}
   d['pageurl'] = 'https://your-site.com'
   d['sitekey'] = '1c7062c7-cae6-4e12-96fb-303fbec7fe4f'
+  # d['invisible'] = '1'            # if invisible hcaptcha - optional
   # d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
   # d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
   captcha_id = ita.submit_hcaptcha d
