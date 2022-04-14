@@ -122,6 +122,30 @@ captcha_id = ita.submit_geetest d
 
 Optionally, you can send proxy and user_agent along.
 
+### GeeTestV4
+
+GeeTesV4 is a new version of captcha from geetest that requires 2 parameters to be solved:
+
+- domain
+- geetestid (captchaID) - gather this from HTML source of page with captcha, inside the `<script>` tag you'll find a link that looks like this: https://i.imgur.com/XcZd47y.png
+
+The response of this captcha after completion are 5 parameters:
+
+- captcha_id
+- lot_number
+- pass_token
+- gen_time
+- captcha_output
+
+```ruby
+d = {}
+d['domain'] = 'https://example.com'
+d['geetestid'] = '647f5ed2ed8acb4be36784e01556bb71'
+captcha_id = ita.submit_geetest_v4 d
+```
+
+Optionally, you can send proxy and user_agent along.
+
 ### hCaptcha
 
 Requires pageurl and sitekey

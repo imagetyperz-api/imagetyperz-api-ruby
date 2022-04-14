@@ -16,6 +16,7 @@ BALANCE_ENDPOINT = '/Forms/RequestBalance.ashx'
 BAD_IMAGE_ENDPOINT = '/Forms/SetBadImage.ashx'
 PROXY_CHECK_ENDPOINT = 'http://captchatypers.com/captchaAPI/GetReCaptchaTextJSON.ashx'
 GEETEST_SUBMIT_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadGeeTest.ashx'
+GEETEST_V4_SUBMIT_ENDPOINT = 'http://www.captchatypers.com/captchaapi/UploadGeeTestV4.ashx'
 GEETEST_RETRIEVE_ENDPOINT = 'http://captchatypers.com/captchaapi/getrecaptchatext.ashx'
 RETRIEVE_JSON_ENDPOINT = 'http://captchatypers.com/captchaapi/GetCaptchaResponseJson.ashx'
 CAPY_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadCapyCaptchaUser.ashx'
@@ -238,6 +239,40 @@ class ImageTyperzAPI
     # create url
     params = URI.encode_www_form(d)
     url = '%s?%s' % [url, params]
+
+    # make request
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    data = http.get(uri.request_uri)
+    response_text = data.body
+
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+    response_text
+  end
+
+  def submit_geetest_v4(d)
+    d['action'] = 'UPLOADCAPTCHA'
+    # user or token ?
+    if !@_username.empty?
+      d["username"] = @_username
+      d["password"] = @_password
+    else
+      d["token"] = @_access_token
+    end
+
+    # affiliate id
+    if @_affiliateid.to_s != '0'
+      d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    # create url
+    params = URI.encode_www_form(d)
+    url = '%s?%s' % [GEETEST_V4_SUBMIT_ENDPOINT, params]
 
     # make request
     uri = URI.parse(url)
