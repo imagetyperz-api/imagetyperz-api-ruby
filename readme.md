@@ -154,10 +154,14 @@ Requires pageurl and sitekey
 d = {}
 d['pageurl'] = 'https://your-site.com'
 d['sitekey'] = '1c7062c7-cae6-4e12-96fb-303fbec7fe4f'
-# d['invisible'] = '1'             # if invisible hcaptcha - optional
+# d['invisible'] = '1'            # if invisible hcaptcha - optional
+
+# extra parameters, useful for enterprise
+# submit userAgent from requests too, when this is used
+# d['HcaptchaEnterprise'] = {'rqdata': 'take value from web requests'}
+
 # d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
 # d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
-captcha_id = ita.submit_hcaptcha d
 ```
 
 ### Capy
@@ -200,6 +204,22 @@ d['surl'] = 'https://api.arkoselabs.com'
 # d['proxy'] = '126.45.34.53:123'  # optional - HTTP proxy - optional
 # d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
 captcha_id = ita.submit_funcaptcha d
+```
+
+### Task
+
+Requires template_name, page_url and usually variables
+
+```ruby
+# task parameters
+d = {
+    'template_name': 'Login test page',
+    'pageurl': 'https://imagetyperz.net/automation/login',
+    'variables': JSON.generate({"username": 'abc', "password": 'paZZW0rd'}),
+    # 'proxy': '126.45.34.53:345',   # or 126.45.34.53:123:joe:password
+    # 'user_agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0',    # optional
+}
+captcha_id = ita.submit_task d
 ```
 
 ## Retrieve response

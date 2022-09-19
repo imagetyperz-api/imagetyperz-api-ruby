@@ -23,6 +23,7 @@ CAPY_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadCapyCaptchaUser.ashx'
 HCAPTCHA_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadHCaptchaUser.ashx'
 TIKTOK_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadTikTokCaptchaUser.ashx'
 FUNCAPTCHA_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadFunCaptcha.ashx'
+TASK_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadCaptchaTask.ashx'
 
 CAPTCHA_ENDPOINT_CONTENT_TOKEN = '/Forms/UploadFileAndGetTextNEWToken.ashx'
 CAPTCHA_ENDPOINT_URL_TOKEN = '/Forms/FileUploadAndGetTextCaptchaURLToken.ashx'
@@ -376,7 +377,7 @@ class ImageTyperzAPI
 
     url = HCAPTCHA_ENDPOINT
 
-    # proxy
+    # enterprise
     if d.key? 'HcaptchaEnterprise'
       d['HcaptchaEnterprise'] = JSON.generate(d['HcaptchaEnterprise'])
     end
@@ -421,6 +422,48 @@ class ImageTyperzAPI
     # affiliate id
     if @_affiliateid.to_s != '0'
       d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    # create url
+    params = URI.encode_www_form(d)
+    url = '%s?%s' % [url, params]
+
+    # make request
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    data = http.get(uri.request_uri)
+    response_text = data.body
+
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+    (JSON.parse response_text)[0]['CaptchaId']
+  end
+
+  def submit_task(d)
+    d['action'] = 'UPLOADCAPTCHA'
+    d['captchatype'] = '16'
+    # user or token ?
+    if !@_username.empty?
+      d["username"] = @_username
+      d["password"] = @_password
+    else
+      d["token"] = @_access_token
+    end
+
+    url = TASK_ENDPOINT
+
+    # affiliate id
+    if @_affiliateid.to_s != '0'
+      d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    # set variables from JSON to string
+    if d.key? (:variables)
+      d[:variables] = JSON.generate(d[:variables])
     end
 
     # create url
