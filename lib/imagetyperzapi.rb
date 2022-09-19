@@ -376,6 +376,11 @@ class ImageTyperzAPI
 
     url = HCAPTCHA_ENDPOINT
 
+    # proxy
+    if d.key? 'HcaptchaEnterprise'
+      d['HcaptchaEnterprise'] = JSON.generate(d['HcaptchaEnterprise'])
+    end
+
     # affiliate id
     if @_affiliateid.to_s != '0'
       d["affiliateid"] = @_affiliateid.to_s
