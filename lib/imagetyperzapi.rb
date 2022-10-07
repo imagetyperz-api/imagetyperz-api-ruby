@@ -24,6 +24,7 @@ HCAPTCHA_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadHCaptchaUser.ashx
 TIKTOK_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadTikTokCaptchaUser.ashx'
 FUNCAPTCHA_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadFunCaptcha.ashx'
 TASK_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadCaptchaTask.ashx'
+TASK_PUSH_ENDPOINT = 'http://captchatypers.com/CaptchaAPI/SaveCaptchaPush.ashx'
 
 CAPTCHA_ENDPOINT_CONTENT_TOKEN = '/Forms/UploadFileAndGetTextNEWToken.ashx'
 CAPTCHA_ENDPOINT_URL_TOKEN = '/Forms/FileUploadAndGetTextCaptchaURLToken.ashx'
@@ -555,6 +556,38 @@ class ImageTyperzAPI
     end
 
     return "$#{response_text}" # all good, return
+  end
+
+  # set captcha bad
+  def task_push_variables(captcha_id, variables)
+    data = {
+      "action": "GETTEXT",
+      "captchaid": captcha_id.to_s,
+      "pushVariables": JSON.generate(variables)
+    }
+
+    if !@_username.empty?
+      data["username"] = @_username
+      data["password"] = @_password
+    else
+      data["token"] = @_access_token
+    end
+    url = TASK_PUSH_ENDPOINT
+
+    # make request
+    http = Net::HTTP.new(ROOT_DOMAIN, 80)
+    http.read_timeout = @_timeout
+    req = Net::HTTP::Post.new(url, @_headers)
+    res = http.request(req, URI.encode_www_form(data))
+    response_text = res.body # get response body
+
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip # get only the
+      @_error = response_err
+      raise @_error
+    end
+    response_text # all good, return
   end
 
   # set captcha bad

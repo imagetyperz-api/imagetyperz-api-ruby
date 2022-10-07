@@ -21,9 +21,15 @@ def test_api
     # 'user_agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0',    # optional
   }
 
+
   captcha_id = ita.submit_task d
   # submit image captcha, and check for solution
   puts "Waiting for captcha to be solved..."
+
+  # send pushVariable - update of variable while task is running (e.g 2FA code)
+  # ------------------------------------------------------------------------------
+  # ita.task_push_variables captcha_id, {"twofactor_code": code}
+
   response = nil
   while response == nil
     sleep 10
