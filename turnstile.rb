@@ -5,7 +5,7 @@ load "lib/imagetyperzapi.rb"
 
 def test_api
   # grab token from https://imagetyperz.com
-  access_token = "your_access_token"
+  access_token = "access_token_here"
   ita = ImageTyperzAPI.new(access_token)
 
   # check account balance
@@ -16,18 +16,16 @@ def test_api
   puts "Waiting for captcha to be solved..."
   d = {}
   d['pageurl'] = 'https://your-site.com'
-  d['sitekey'] = '1c7062c7-cae6-4e12-96fb-303fbec7fe4f'
-  # d['invisible'] = '1'            # if invisible hcaptcha - optional
+  d['sitekey'] = '0x4ABBBBAABrfvW5vKbx11FZ'
 
-  # d['domain'] = 'hcaptcha.com'            # domain used in loading of hcaptcha interface, default: hcaptcha.com - optional
-
-  # extra parameters, useful for enterprise
-  # submit userAgent from requests too, when this is used
-  # d['HcaptchaEnterprise'] = {'rqdata': 'take value from web requests'}
+  # optional parameters, specific to loading of turnstile interface
+  # d['domain'] = 'challenges.cloudflare.com'   # domain used in loading turnstile interface, default: challenges.cloudflare.com - optional
+  # d['action'] = 'homepage'                    # used in loading turnstile interface, similar to reCAPTCHA - optional
+  # d['cdata'] = 'your cdata information'       # used in loading turnstile interface - optional
 
   # d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
   # d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
-  captcha_id = ita.submit_hcaptcha d
+  captcha_id = ita.submit_turnstile d
   response = nil
   while response == nil
     sleep 10

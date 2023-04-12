@@ -68,6 +68,7 @@ For recaptcha submission there are two things that are required.
     - `3` - v3
     - `4` - enterprise v2
     - `5` - enterprise v3
+- domain - used in loading of reCAPTCHA interface, default: `www.google.com` (alternative: `recaptcha.net`) - `optional`
 - v3_min_score - minimum score to target for v3 recaptcha `- optional`
 - v3_action - action parameter to use for v3 recaptcha `- optional`
 - proxy - proxy to use when solving recaptcha, eg. `12.34.56.78:1234` or `12.34.56.78:1234:user:password` `- optional`
@@ -80,6 +81,7 @@ d = {}
 d['page_url'] = 'https://your-site.com'
 d['sitekey'] = '7LrGJmcUABBAALFtIb_FxC0LXm_GwOLyJAfbbUCL'
 # d['type'] = 3    # optional, defaults to 1
+# d['domain'] = 'www.google.com'   # used in loading reCAPTCHA interface - optional
 # d['v3_min_score'] = 0.3          # min score to target when solving v3 - optional
 # d['v3_action'] = 'homepage'      # action to use when solving v3 - optional
 # d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
@@ -156,6 +158,9 @@ d['pageurl'] = 'https://your-site.com'
 d['sitekey'] = '1c7062c7-cae6-4e12-96fb-303fbec7fe4f'
 # d['invisible'] = '1'            # if invisible hcaptcha - optional
 
+# domain used in loading of hcaptcha interface, default: hcaptcha.com - optional
+# d['domain'] = 'hcaptcha.com'
+
 # extra parameters, useful for enterprise
 # submit userAgent from requests too, when this is used
 # d['HcaptchaEnterprise'] = {'rqdata': 'take value from web requests'}
@@ -204,6 +209,25 @@ d['surl'] = 'https://api.arkoselabs.com'
 # d['proxy'] = '126.45.34.53:123'  # optional - HTTP proxy - optional
 # d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
 captcha_id = ita.submit_funcaptcha d
+```
+
+### Turnstile (Cloudflare)
+
+Requires pageurl, sitekey
+
+```ruby
+d = {}
+d['pageurl'] = 'https://your-site.com'
+d['sitekey'] = 'Fme7hXLvuCRNMC3uj10F52D3uNmg5c'
+
+# optional parameters, specific to loading of turnstile interface
+# d['domain'] = 'challenges.cloudflare.com'   # domain used in loading turnstile interface, default: challenges.cloudflare.com - optional
+# d['action'] = 'homepage'                    # used in loading turnstile interface, similar to reCAPTCHA - optional
+# d['cdata'] = 'your cdata information'       # used in loading turnstile interface - optional
+
+# d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
+# d['user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' # optional
+captcha_id = ita.submit_turnstile d
 ```
 
 ### Task
@@ -265,7 +289,6 @@ The response is a JSON object that looks like this:
   "Response": "03AGdBq24PBCbwiDRaS_MJ7Z...mYXMPiDwWUyEOsYpo97CZ3tVmWzrB", 
   "Cookie_OutPut": "", 
   "Proxy_reason": "", 
-  "Recaptcha score": 0.0, 
   "Status": "Solved"
 }
 ```

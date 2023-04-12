@@ -28,6 +28,7 @@ def test_api
   #
   # d['type'] = 1    # optional, defaults to 1
   #
+  # d['domain'] = 'www.google.com'    # used in loading reCAPTCHA interface, default: www.google.com (alternative: recaptcha.net) - optional
   # d['v3_min_score'] = 0.3          # min score to target when solving v3 - optional
   # d['v3_action'] = 'homepage'      # action to use when solving v3 - optional
   # d['proxy'] = '126.45.34.53:123'  # - HTTP proxy - optional
@@ -53,7 +54,7 @@ def main
   begin
     test_api
   rescue => details
-    puts "[!] Error occured: #{details}"
+    puts "[!] Error occurred: #{details}"
   end
 end
 

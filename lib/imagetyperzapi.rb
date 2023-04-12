@@ -25,6 +25,7 @@ TIKTOK_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadTikTokCaptchaUser.a
 FUNCAPTCHA_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadFunCaptcha.ashx'
 TASK_ENDPOINT = 'http://captchatypers.com/captchaapi/UploadCaptchaTask.ashx'
 TASK_PUSH_ENDPOINT = 'http://captchatypers.com/CaptchaAPI/SaveCaptchaPush.ashx'
+TURNSTILE_ENDPOINT = 'http://captchatypers.com/captchaapi/Uploadturnstile.ashx'
 
 CAPTCHA_ENDPOINT_CONTENT_TOKEN = '/Forms/UploadFileAndGetTextNEWToken.ashx'
 CAPTCHA_ENDPOINT_URL_TOKEN = '/Forms/FileUploadAndGetTextCaptchaURLToken.ashx'
@@ -191,6 +192,9 @@ class ImageTyperzAPI
       if d['type'].to_s == '5'
         data['enterprise_type'] = 'v3'
       end
+    end
+    if d.key? 'domain'
+      data['domain'] = d['domain']
     end
     if d.key? 'v3_action'
       data['captchaaction'] = d['v3_action']
@@ -383,6 +387,11 @@ class ImageTyperzAPI
       d['HcaptchaEnterprise'] = JSON.generate(d['HcaptchaEnterprise'])
     end
 
+    if d.key? 'domain'
+      d['apiEndpoint'] = d['domain']
+      d.delete('domain')
+    end
+
     # affiliate id
     if @_affiliateid.to_s != '0'
       d["affiliateid"] = @_affiliateid.to_s
@@ -428,6 +437,56 @@ class ImageTyperzAPI
     # create url
     params = URI.encode_www_form(d)
     url = '%s?%s' % [url, params]
+
+    # make request
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    data = http.get(uri.request_uri)
+    response_text = data.body
+
+    # check if error
+    if response_text.include?("ERROR:")
+      response_err = response_text.split('ERROR:')[1].strip() # get only the
+      @_error = response_err
+      raise @_error
+    end
+    (JSON.parse response_text)[0]['CaptchaId']
+  end
+
+  def submit_turnstile(d)
+    # user or token ?
+    if !@_username.empty?
+      d["username"] = @_username
+      d["password"] = @_password
+    else
+      d["token"] = @_access_token
+    end
+
+    # affiliate id
+    if @_affiliateid.to_s != '0'
+      d["affiliateid"] = @_affiliateid.to_s
+    end
+
+    if d.key? 'user_agent'
+      d['useragent'] = d['user_agent']
+      d.delete('user_agent')
+    end
+    if d.key? 'domain'
+      d['apiEndpoint'] = d['domain']
+      d.delete('domain')
+    end
+    if d.key? 'action'
+      d['taction'] = d['action']
+    end
+    if d.key? 'cdata'
+      d['data'] = d['cdata']
+      d.delete('cdata')
+    end
+
+    d['action'] = 'UPLOADCAPTCHA'
+    # create url
+    params = URI.encode_www_form(d)
+    url = '%s?%s' % [TURNSTILE_ENDPOINT, params]
 
     # make request
     uri = URI.parse(url)
